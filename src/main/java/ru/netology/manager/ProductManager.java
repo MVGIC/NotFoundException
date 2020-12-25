@@ -52,4 +52,19 @@ public class ProductManager {
         }
         return false;
     }
+
+    public void removeById(int id) {
+        repository.removeById(id);
+    }
+
+    public Product[] getAll() {
+        Product[] products = repository.findAll();
+        Product[] result = new Product[products.length];
+        for (int i = 0; i < result.length; i++) {
+            int index = products.length - i - 1;
+            result[i] = products[index];
+        }
+        return result;
+    }
 }
+
