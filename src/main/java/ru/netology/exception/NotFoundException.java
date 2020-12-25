@@ -5,7 +5,7 @@ public class NotFoundException extends RuntimeException {
     }
 
     public NotFoundException(String message) {
-        super("\"Element with id: \" + id + \" not found\"");
+        super(message);
     }
 
     public NotFoundException(String message, Throwable cause) {
