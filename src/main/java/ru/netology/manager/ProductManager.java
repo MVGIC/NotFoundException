@@ -54,7 +54,6 @@ public class ProductManager {
     }
 
     public void removeById(int id) {
-        repository.findById(id);
         repository.removeById(id);
     }
 

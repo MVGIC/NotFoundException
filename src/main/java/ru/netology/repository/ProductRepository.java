@@ -26,11 +26,14 @@ public class ProductRepository {
                 return product;
             }
         }
-        throw new NotFoundException("Element with id: " + id + " not found");
-
+        return null;
     }
 
     public void removeById(int id) {
+        findById(id);
+        if (findById(id) == null) {
+            throw new NotFoundException("Element with id: " + id + " not found");
+        }
         int length = products.length - 1;
         Product[] tmp = new Product[length];
         int index = 0;
